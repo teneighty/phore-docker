@@ -1,0 +1,16 @@
+version: '3'
+services:
+  phore:
+    image: "teneighty/phore"
+    ports:
+      - "11773:11773"
+      - "11774:11774"
+    volumes:
+      - ./config:/root/.phore
+
+  phore-cli:
+    image: "teneighty/phore"
+    volumes:
+      - ./config:/root/.phore
+    command: ["phone-cli"]
+
